@@ -39,27 +39,25 @@ export class Exercise2Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pl(6, 0);
+    this.printX(6, 6);
   }
 
   printX(n: number, naux) {
-    if (n == 0) {
+    if (n <= 0) {
     } else if (n == 1) {
-      this.result += '******\n';
+      this.pl(naux, n);
+      this.result += '\n';
     } else {
-      this.result += '******\n';
+      this.pl(naux, n);
+      this.result += '\n';
       this.printX(n - 2, naux);
-      this.result += '******\n';
+      this.pl(naux, n);
+      this.result += '\n';
     }
   }
 
   pl(n, i) {
     if (n <= 0) {
-      if (n == i) {
-        this.result += 'X';
-      } else {
-        this.result += '_';
-      }
     } else if (n == 1) {
       if (n == i) {
         this.result += 'X';
