@@ -1,0 +1,12 @@
+<div class="main">
+  <form [formGroup]="xForm" (submit)="onSubmit()">
+    <input formControlName="x" placeholder="Ingrese el tamaño de la X" />
+    <button>Generar</button>
+  </form>
+  <div *ngIf="error">
+    {{ this.error }}
+  </div>
+  <div class="result">
+    <p style="margin-bottom: 2rem;white-space:pre-wrap;">{{result}}</p>
+  </div>
+</div>

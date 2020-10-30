@@ -1,0 +1,14 @@
+<div class="main">
+  <form [formGroup]="arrayForm" (submit)="onSubmit()">
+    <input formControlName="array" placeholder="Inserte el arreglo" />
+
+    <button>Generar</button>
+  </form>
+  <div class="result">
+    <div *ngFor="let item of histograma | keyvalue">
+      <div class="item">
+        {{item.key}}: {{item.value}}
+      </div>
+    </div>
+  </div>
+</div>
